@@ -1,14 +1,13 @@
 import './App.css';
-import React, { useState } from 'react';
-import ComponentA from "./components/taskOne/componentA";
+import React from 'react'
 import UserList from "./components/taskTwo/userListComponent"
 
-var user = {
+const user = {
     name: "",
     surname: "",
     age: 12,
     address: "",
-    active: false
+    status: false
 }
 
 class App extends React.Component {
@@ -24,13 +23,15 @@ class App extends React.Component {
     initUserList = function () {
         let userList = this.state.userList;
         for(let i in userList) {
-            userList[i].name = "" + i;
-            userList[i].surname = "" + i;
-            userList[i].age = 10 + i;
-            userList[i].address = "a" + i;
-            userList[i].active = false;
+            userList[i].name = "name" + i;
+            userList[i].surname = "surname" + i;
+            userList[i].age = 1 + i;
+            userList[i].address = "address" + i;
+            userList[i].active = true;
+            if('2' === i) {
+                userList[i].active = false;
+            }
         }
-
         this.setState({
             userList: userList
         })

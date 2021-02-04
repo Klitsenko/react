@@ -1,5 +1,5 @@
 import React from "react";
-import './css/styles.css'
+import './css/userListComponent.css'
 
 class User extends React.Component {
     constructor(props) {
@@ -9,12 +9,9 @@ class User extends React.Component {
             style: "",
             status:  "inactive"
         }
-        console.log("log1")
-
     }
 
     componentDidMount() {
-        console.log("log2")
         if (this.state.user.active && this.state.status === "inactive") {
             this.setState({
                 style: "user-style-active",
@@ -29,7 +26,10 @@ class User extends React.Component {
                 <h1>{this.state.user.name}</h1>
                 <li>{this.state.user.surname}</li>
                 <li>{this.state.user.age}</li>
-                <li>{this.state.user.address}</li>
+                <ul>
+                    <li>{this.state.user.address.city}</li>
+                    <li>{this.state.user.address.country}</li>
+                </ul>
                 <li className={this.state.style}>{this.state.status}</li>
             </ul>
         </div>

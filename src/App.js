@@ -2,11 +2,16 @@ import './App.css';
 import React from 'react'
 import UserList from "./components/taskTwo/userListComponent"
 
+const userAddress = {
+    city: "",
+    country: ""
+}
+
 const user = {
     name: "",
     surname: "",
     age: 12,
-    address: "",
+    address: userAddress,
     status: false
 }
 
@@ -26,8 +31,9 @@ class App extends React.Component {
             userList[i].name = "name" + i;
             userList[i].surname = "surname" + i;
             userList[i].age = 1 + i;
-            userList[i].address = "address" + i;
             userList[i].active = true;
+            userList[i].address.city = "city" + i;
+            userList[i].address.country = "country" + i;
             if('2' === i) {
                 userList[i].active = false;
             }
